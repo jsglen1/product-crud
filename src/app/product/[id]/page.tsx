@@ -14,7 +14,7 @@ export default function PageProductId({ params }: { params: { id: string } }) {
   async function getProduct() {
     try {
       axios
-        .get(process.env.NEXT_PUBLIC_DOMAIN_URL + "/api/product/" + params.id)
+        .get("/api/product/" + params.id)
         .then((response) => {
           setProduct(response.data);
         })
@@ -48,11 +48,7 @@ export default function PageProductId({ params }: { params: { id: string } }) {
   async function deleteProducts(productId: number) {
     try {
       axios
-        .delete(
-          process.env.NEXT_PUBLIC_DOMAIN_URL +
-            "/api/product/" +
-            productId.toString()
-        )
+        .delete("/api/product/" + productId.toString())
         .then((response) => {
           handleRouteProductDeleted();
         })

@@ -11,7 +11,7 @@ export default function ProductList() {
   async function getProducts() {
     try {
       axios
-        .get(process.env.NEXT_PUBLIC_DOMAIN_URL + "/api/product")
+        .get("/api/product")
         .then((response) => {
           setproductList(response.data);
         })

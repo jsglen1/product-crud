@@ -72,7 +72,7 @@ export default function ProductForm({ paramsId }: Props) {
   async function getProduct(paramsId: string) {
     try {
       axios
-        .get(process.env.NEXT_PUBLIC_DOMAIN_URL + "/api/product/" + paramsId)
+        .get("/api/product/" + paramsId)
         .then((response) => {
           const data: productTypeResponse = response.data;
           setFormData({
